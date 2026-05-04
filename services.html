@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - ServiceFinder</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <span class="logo-icon">🔧</span>
+      <span class="logo-text">ServiceFinder</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="page-header">
+  <div class="container">
+    <h1>Available Services</h1>
+    <p>Find trusted local service providers near you</p>
+  </div>
+</header>
+
+<!-- Services Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="services-layout">
+      <!-- Services List -->
+      <div class="services-list">
+        <div class="list-header">
+          <h2>Service Providers</h2>
+          <div class="filter-box">
+            <input type="text" id="search" class="filter-input" placeholder="Filter services...">
+          </div>
+        </div>
+        <div id="list" class="services-grid-view">
+          <!-- Service cards will be dynamically loaded -->
+        </div>
+      </div>
+      
+      <!-- Map -->
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>ServiceFinder</h4>
+        <p>Your trusted platform for finding verified local service providers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html?type=Electrician">Electrician</a></li>
+          <li><a href="services.html?type=Plumber">Plumber</a></li>
+          <li><a href="services.html?type=Carpenter">Carpenter</a></li>
+          <li><a href="services.html?type=Painter">Painter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <ul>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ info@servicefinder.com</li>
+          <li>📍 Hyderabad, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 ServiceFinder. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

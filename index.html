@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServiceFinder - Premium Local Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<button id="darkModeToggle" class="dark-mode-toggle" title="Toggle Dark Mode">
+  <i class="fas fa-moon"></i>
+</button>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <span class="logo-icon">🔧</span>
+      <span class="logo-text">ServiceFinder</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="favoritesBtn" class="nav-btn" title="Favorites">
+        <i class="fas fa-heart"></i>
+        <span id="favoritesCount">0</span>
+      </button>
+    </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero with Map Preview -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-target="500">0</span>
+          <span>Vetted Providers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="50">0</span>k
+          <span>Happy Customers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="4.8">0</span>
+          <span>Avg Rating</span>
+        </div>
+      </div>
+      
+      <h1 class="hero-title">Find Trusted Local Services Instantly</h1>
+      <p class="hero-subtitle">Connect with verified professionals near you - Electricians, Plumbers & more</p>
+      
+      <div class="search-box">
+        <input type="text" id="search" class="search-input" placeholder="Search services near you...">
+        <button onclick="goToServices()" class="search-btn">
+          <i class="fas fa-search"></i> Find Services
+        </button>
+      </div>
+      
+      <div class="quick-links">
+        <a href="services.html?category=Electrical" class="quick-tag">
+          <i class="fas fa-bolt"></i> Electrician
+        </a>
+        <a href="services.html?category=Plumbing" class="quick-tag">
+          <i class="fas fa-tint"></i> Plumber
+        </a>
+        <a href="services.html?category=Carpentry" class="quick-tag">
+          <i class="fas fa-hammer"></i> Carpenter
+        </a>
+        <a href="services.html?category=Painting" class="quick-tag">
+          <i class="fas fa-paint-brush"></i> Painter
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Interactive Map Preview -->
+  <div class="hero-map-section">
+    <div id="heroMap" class="hero-map"></div>
+    <div class="map-overlay">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Click to explore services on full map</span>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Services -->
+<section class="featured-services">
+  <div class="container">
+    <h2 class="section-title">Featured Services Near You</h2>
+    <div class="services-grid" id="featuredServices">
+      <!-- Dynamic -->
+    </div>
+  </div>
+</section>
+
+<!-- Trust Signals -->
+<section class="trust-signals">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <h3>Background Verified</h3>
+        <p>All providers pass strict verification</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⭐</div>
+        <h3>4.8★ Average</h3>
+        <p>50K+ verified customer reviews</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💰</div>
+        <h3>No Hidden Fees</h3>
+        <p>Transparent pricing upfront</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📞</div>
+        <h3>Instant Booking</h3>
+        <p>Contact providers directly</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Get Your Job Done Right?</h2>
+    <p>Browse hundreds of verified local professionals</p>
+    <a href="services.html" class="cta-btn">Explore All Services</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>ServiceFinder</h4>
+        <p>Your trusted platform for finding verified local service providers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html?category=Electrical">Electrician</a></li>
+          <li><a href="services.html?category=Plumbing">Plumber</a></li>
+          <li><a href="services.html?category=Carpentry">Carpenter</a></li>
+          <li><a href="services.html?category=Painting">Painter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ info@servicefinder.com</li>
+          <li>📍 Hyderabad, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 ServiceFinder. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Book Service</h2>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label>Service</label>
+        <input type="text" id="bookingService" readonly>
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" id="bookingDate">
+      </div>
+      <div class="form-group">
+        <label>Time</label>
+        <select id="bookingTime">
+          <option>9AM-11AM</option>
+          <option>11AM-1PM</option>
+          <option>2PM-4PM</option>
+          <option>4PM-6PM</option>
+        </select>
+      </div>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+

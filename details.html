@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details - ServiceFinder</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <span class="logo-icon">🔧</span>
+      <span class="logo-text">ServiceFinder</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="page-header">
+  <div class="container">
+    <a href="services.html" class="back-link">← Back to Services</a>
+    <h1>Service Details</h1>
+  </div>
+</header>
+
+<!-- Details Section -->
+<section class="details-section">
+  <div class="container">
+    <div class="details-card">
+      <div class="details-header">
+        <div class="provider-avatar" id="provider-icon">⚡</div>
+        <div class="provider-info">
+          <h2 id="service-name">Service Name</h2>
+          <p class="service-type" id="service-type">Service Type</p>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(128 reviews)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="details-body">
+        <div class="detail-row">
+          <span class="detail-label">📍 Location</span>
+          <span class="detail-value" id="service-location">Address</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">📞 Phone</span>
+          <span class="detail-value" id="service-phone">+91 98765 43210</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">✉️ Email</span>
+          <span class="detail-value" id="service-email">contact@service.com</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">🕐 Experience</span>
+          <span class="detail-value" id="service-exp">5+ Years</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">💰 Starting Price</span>
+          <span class="detail-value" id="service-price">₹299</span>
+        </div>
+      </div>
+      
+      <div class="details-description">
+        <h3>About This Service</h3>
+        <p id="service-desc">Professional service provider with years of experience delivering quality work. We specialize in all types of service related work and ensure customer satisfaction.</p>
+      </div>
+      
+      <div class="details-actions">
+        <a href="tel:+919876543210" class="btn btn-primary">📞 Call Now</a>
+        <a href="mailto:contact@service.com" class="btn btn-secondary">✉️ Email</a>
+        <button onclick="window.history.back()" class="btn btn-outline">← Back</button>
+      </div>
+    </div>
+    
+    <!-- Map Section -->
+    <div class="details-map">
+      <h3>📍 Service Location</h3>
+      <div id="map"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>ServiceFinder</h4>
+        <p>Your trusted platform for finding verified local service providers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html?type=Electrician">Electrician</a></li>
+          <li><a href="services.html?type=Plumber">Plumber</a></li>
+          <li><a href="services.html?type=Carpenter">Carpenter</a></li>
+          <li><a href="services.html?type=Painter">Painter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <ul>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ info@servicefinder.com</li>
+          <li>📍 Hyderabad, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 ServiceFinder. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
